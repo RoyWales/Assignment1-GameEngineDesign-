@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class OpenDoor : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    void OnCollisionEnter(Collision collision)
     {
+       // Destroy(collision.collider.gameObject);
+       // Destroy(gameObject);
+        if (collision.gameObject.tag == "Player")
+        {
+           // Destroy(gameObject);
+
+            DestroyAll("Lock");
+        }
+
         
     }
 
-    // Update is called once per frame
-    void Update()
+    void DestroyAll(string tag)
     {
-        
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag(tag);
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            GameObject.Destroy(enemies[i]);
+        }
     }
+
 }
