@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
         
         //This is for moving the character
         Vector3 move = new Vector3(Input.GetAxis("Horizontal")* -1, 0, Input.GetAxis("Vertical")* -1); //had to flip it (* -1)
-        controller.Move(move * Time.deltaTime * playerSpeed); //
+        controller.Move(move * Time.deltaTime * playerSpeed); //multiply move vector by time and speed
 
         // This turns the player to face the direction they are moving in if not zero
         if (move != Vector3.zero)
