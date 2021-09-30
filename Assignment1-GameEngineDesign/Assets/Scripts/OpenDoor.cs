@@ -7,24 +7,19 @@ public class OpenDoor : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-       // Destroy(collision.collider.gameObject);
-       // Destroy(gameObject);
         if (collision.gameObject.tag == "Player")
         {
-           // Destroy(gameObject);
-
-            DestroyAll("Lock");
+            DestroyAll("Lock"); //called my function bellow
         }
-
-        
     }
 
-    void DestroyAll(string tag)
+    void DestroyAll(string tag) //function made to take a take and destroy all with that tag
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag(tag);
-        for (int i = 0; i < enemies.Length; i++)
+        GameObject[] obj = GameObject.FindGameObjectsWithTag(tag);
+
+        for (int i = 0; i < obj.Length; i++)
         {
-            GameObject.Destroy(enemies[i]);
+            GameObject.Destroy(obj[i]);
         }
     }
 

@@ -11,13 +11,13 @@ public class CameraFollow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cameraOffset = transform.position - targetObject.transform.position;
+        cameraOffset = transform.position - targetObject.transform.position; //gets the offset of the camera position
     }
 
     
     void LateUpdate()
     {
-        Vector3 newPosition = targetObject.transform.position + cameraOffset;
-        transform.position = Vector3.Slerp(transform.position, newPosition, lerpFactor);
+        Vector3 newPosition = targetObject.transform.position + cameraOffset; //creates the new position
+        transform.position = Vector3.Slerp(transform.position, newPosition, lerpFactor); //slerps the positions for a smooth movement
     }
 }
