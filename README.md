@@ -7,4 +7,4 @@ The level that I created is a 3rd person game that requires the player to pick u
 My main source I used was the unity manual to clear a few things up (linked below)
 https://docs.unity3d.com/Manual/index.html
 
-I also used the basic movement script that we covered in the tutorial
+I also used the movement script that we created for our game
