@@ -7,11 +7,16 @@ using UnityEngine.SceneManagement;
 public class YouWin : MonoBehaviour
 {
 
+    public bool Win = true;
+
     void OnCollisionEnter(Collision gameObjectInfo)
     {
-        if (gameObjectInfo.gameObject.tag == "Player")
+        if(Win == true)
         {
-            SceneManager.LoadScene("WinScene");//win scene
+            if (gameObjectInfo.gameObject.tag == "Player")
+            {
+                SceneManager.LoadScene("WinScene");//win scene
+            }
         }
 
     }
